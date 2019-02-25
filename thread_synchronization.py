@@ -34,8 +34,8 @@ class ThreadTest(unittest.TestCase):
 
         ts_odd = ThreadSynchronization(1, 3, 2, first_thread_event, second_thread_event)
         ts_even = ThreadSynchronization(2, 3, 2, second_thread_event, first_thread_event)
-        threads.append(threading.Thread(name="1", target=ts_odd.output_thread_and_num))
-        threads.append(threading.Thread(name="2", target=ts_even.output_thread_and_num))
+        test_threads.append(threading.Thread(name="1", target=ts_odd.output_thread_and_num))
+        test_threads.append(threading.Thread(name="2", target=ts_even.output_thread_and_num))
 
         with redirect_stdout(to_test):
             for test_thread in test_threads:
